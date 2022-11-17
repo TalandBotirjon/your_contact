@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <header class="hero">
+        <div class="hero-info">
+            <h1 class="name">Login Site.</h1>
+        </div>
+    </header>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <section class="contact-info">
+
+            <div class="info-line">
+                <i class="fas fa-user-circle icon-gradient"></i>
+                <input type="text" class="type" name="username" placeholder="Username" value="{{ username }}">
+            </div>
+
+            <div class="info-line">
+                <i class="fas fa-cog icon-gradient"></i>
+                <input type="password" class="type" name="password" placeholder="Password" value="{{ password }}">
+            </div>
+
+        </section>
+
+        <section class="button-container">
+            <div class="update-contact">
+                <i class="fas fa-check-circle icon-gradient"></i>
+                <button class="button">Login</button>
+            </div>
+        </section>
+    </form>
+
+{% endblock %}
