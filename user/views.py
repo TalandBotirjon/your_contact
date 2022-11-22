@@ -18,3 +18,12 @@ def user_login(request):
             messages.error(request, "Hatolik bor.")
     context = {'username': username, 'password': password}
     return render(request, 'user/login.html', context)
+
+
+def signupview(request):
+    if request.method == "POST":
+        print(request.POST.get('username'))
+        print(request.POST.get('email'))
+        print(request.POST.get('password1'))
+        print(request.POST.get('password2'))
+    return render(request, 'user/signup.html')
